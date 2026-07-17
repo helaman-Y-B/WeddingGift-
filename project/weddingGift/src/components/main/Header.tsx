@@ -3,7 +3,7 @@ export default function Header() {
     <>
       <header>
         <span>WeddingGift</span>
-        <img src="/img/something.webp" alt="navigation button" />
+        <p>X</p>
       </header>
       <nav>
         <ul>
