@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "Wedding Gift",
+      "src": "/img/something.webp",
+      "price": 150
+    },
+    {
+      "name": "Special Voucher",
+      "src": "/img/something.webp",
+      "price": 90
+    }
+  ]
+}
