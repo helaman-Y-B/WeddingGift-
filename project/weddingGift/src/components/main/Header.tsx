@@ -1,11 +1,20 @@
+import { useState } from "react";
+
 export default function Header() {
+
+  const [nav, setNav] = useState(false);
+
+  const handleNav = () => {
+    setNav(!nav);
+  }
+
   return (
     <>
       <header>
         <span>WeddingGift</span>
-        <p>X</p>
+        <button onClick={handleNav}>{nav ? "X" : "--"}</button>
       </header>
-      <nav>
+      <nav className={ nav ? "openNav" : "closeNav"}>
         <ul>
           <li>
             <a href="/">Main</a>
