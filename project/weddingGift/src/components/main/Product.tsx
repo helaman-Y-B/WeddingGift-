@@ -6,7 +6,6 @@ export default function Product() {
                 <h3>Product name</h3>
                 <img src="" alt="" />
                 <p>Price: R$000.00</p>
-                <button>Compre!</button>
             </div>
         </>
     )

@@ -63,7 +63,6 @@ export default function Products() {
           <h3>{product.name}</h3>
           <img src={product.src} alt={`${product.name} image`} />
           <p>Preço: R${product.price.toFixed(2)}</p>
-          <button type="button">Compre!</button>
         </div>
       ))}
     </div>
