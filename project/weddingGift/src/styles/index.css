@@ -108,7 +108,7 @@ nav ul li a {
     padding-right 0.3s ease;
 }
 
-nav ul li:hover a {
+nav ul li a:hover{
   background-color: var(--tertiary-color);
   color: #333;
   padding-left: 8px;

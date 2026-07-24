@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 export default function Couple() {
-  
+
   const somethingImage = "/img/something.webp";
 
   return (
@@ -8,7 +10,7 @@ export default function Couple() {
         <img src={somethingImage} alt="Couples image" />
         <div id="infos">
           <h2>Couples name</h2>
-          <p>Venha conhecer a nossa <a href="/">História!</a></p>
+          <p>Venha conhecer a nossa <Link to="/history">História!</Link></p>
         </div>
       </div>
     </>
