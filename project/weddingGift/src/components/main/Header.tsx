@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
@@ -17,7 +18,8 @@ export default function Header() {
       <nav className={ nav ? "openNav" : "closeNav"}>
         <ul>
           <li>
-            <a href="/">Main</a>
+            <Link to="/">Main</Link>
+            <Link to="/history">Nossa História</Link>
           </li>
         </ul>
       </nav>

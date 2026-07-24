@@ -1,4 +1,5 @@
 export default function Couple() {
+  
   const somethingImage = "/img/something.webp";
 
   return (
@@ -7,7 +8,7 @@ export default function Couple() {
         <img src={somethingImage} alt="Couples image" />
         <div id="infos">
           <h2>Couples name</h2>
-          <p>Couples history link</p>
+          <p>Venha conhecer a nossa <a href="/">História!</a></p>
         </div>
       </div>
     </>
