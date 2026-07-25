@@ -160,6 +160,10 @@ nav ul li a:hover{
   flex-direction: column;
 }
 
+.product h3, h4 {
+  text-align: center;
+}
+
 .product img {
   width: 100%;
 }

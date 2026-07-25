@@ -1,14 +1,52 @@
 {
   "products": [
     {
-      "name": "Wedding Gift",
+      "name": "Cota para não viver de miojo",
+      "subTitle": null,
       "src": "/img/something.webp",
-      "price": 150
+      "price": 50
     },
     {
-      "name": "Special Voucher",
+      "name": "Cota viagem pro templo",
+      "subTitle": null,
       "src": "/img/something.webp",
-      "price": 90
+      "price": 100
+    },
+    {
+      "name": "Cota para o noivo não ter mais meias furadas",
+      "subTitle": null,
+      "src": "/img/something.webp",
+      "price": 200
+    },
+    {
+      "name": "Cota para a Noiva crecer 30cm",
+      "subTitle": "(quem sabe ainda acontece)",
+      "src": "/img/something.webp",
+      "price": 350
+    },
+    {
+      "name": "Cota 'Adeus dor nas costas'",
+      "subTitle": "(comprar uma cama boa)",
+      "src": "/img/something.webp",
+      "price": 400
+    },
+    {
+      "name": "Cota terapia de casal",
+      "subTitle": "(vai que a gente enlouquece)",
+      "src": "/img/something.webp",
+      "price": 600
+    },
+    {
+      "name": "Cota 'Ajude na nossa Lua de Mel'",
+      "subTitle": null,
+      "src": "/img/something.webp",
+      "price": 1000
+    },
+    {
+      "name": "Cota chuva de bençãos",
+      "subTitle": null,
+      "src": "/img/something.webp",
+      "price": 5000
     }
   ]
 }

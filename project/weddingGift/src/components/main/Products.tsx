@@ -58,13 +58,20 @@ export default function Products() {
   // Render the list of products
   return (
     <div className="products">
-      {products.map((product) => (
-        <div className="product" key={product.name}>
-          <h3>{product.name}</h3>
-          <img src={product.src} alt={`${product.name} image`} />
-          <p>Preço: R${product.price.toFixed(2)}</p>
-        </div>
-      ))}
+      {products.map((product) => {
+        const hasSubtitle =
+          typeof product.subTitle === "string" &&
+          product.subTitle.trim() !== "";
+
+        return (
+          <div className="product" key={product.name}>
+            <h3>{product.name}</h3>
+            {hasSubtitle && <h4>{product.subTitle}</h4>}
+            <img src={product.src} alt={`${product.name} image`} />
+            <p>Preço: R${product.price.toFixed(2)}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
