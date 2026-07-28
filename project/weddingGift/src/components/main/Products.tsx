@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getProducts, type Product } from "../../controllers/products";
 
 export default function Products() {
@@ -64,12 +65,18 @@ export default function Products() {
           product.subTitle.trim() !== "";
 
         return (
-          <div className="product" id={product.id} key={product.id}>
-            <h3>{product.name}</h3>
-            {hasSubtitle && <h4>{product.subTitle}</h4>}
-            <img src={product.src} alt={`${product.name} image`} />
-            <p>Preço: R${product.price.toFixed(2)}</p>
-          </div>
+          <Link
+            to={`/product/${product.id}`}
+            key={product.id}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div className="product" id={product.id}>
+              <h3>{product.name}</h3>
+              {hasSubtitle && <h4>{product.subTitle}</h4>}
+              <img src={product.src} alt={`${product.name} image`} />
+              <p>Preço: R${product.price.toFixed(2)}</p>
+            </div>
+          </Link>
         );
       })}
     </div>

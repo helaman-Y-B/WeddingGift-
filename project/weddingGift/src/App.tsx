@@ -6,6 +6,7 @@ import Footer from "./components/main/Footer";
 
 import Couple from "./components/main/Couple";
 import Products from "./components/main/Products";
+import ProductDetail from "./components/main/ProductDetail";
 
 import CouplesHistory from "./components/history/CoupleHistory";
 
@@ -32,6 +33,7 @@ function App() {
               </>
             }
           />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/history" element={<CouplesHistory />} />
         </Routes>
         <Footer />
