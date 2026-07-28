@@ -1,54 +1,63 @@
 {
   "products": [
     {
+      "id": "cota-nao-viver-de-miojo",
       "name": "Cota para não viver de miojo",
       "subTitle": null,
       "src": "/img/miojo.png",
       "price": 50
     },
     {
+      "id": "cota-viagem-pro-templo",
       "name": "Cota viagem pro templo",
       "subTitle": null,
       "src": "/img/templo.jpeg",
       "price": 100
     },
     {
+      "id": "cota-meias-furadas",
       "name": "Cota para o noivo não ter mais meias furadas",
       "subTitle": null,
       "src": "/img/meias.jpeg",
       "price": 200
     },
     {
+      "id": "cota-noiva-30cm",
       "name": "Cota para a Noiva crecer 30cm",
       "subTitle": "(quem sabe ainda acontece)",
       "src": "/img/perna.jpeg",
       "price": 350
     },
     {
+      "id": "cota-adeus-dor-nas-costas",
       "name": "Cota 'Adeus dor nas costas'",
       "subTitle": "(comprar uma cama boa)",
       "src": "/img/dor.jpeg",
       "price": 400
     },
     {
+      "id": "cota-terapia-de-casal",
       "name": "Cota terapia de casal",
       "subTitle": "(vai que a gente enlouquece)",
       "src": "/img/terapia.jpeg",
       "price": 600
     },
     {
+      "id": "cota-lua-de-mel",
       "name": "Cota 'Ajude na nossa Lua de Mel'",
       "subTitle": null,
       "src": "/img/mel.jpeg",
       "price": 1000
     },
     {
+      "id": "cota-manter-hobbies",
       "name": "Cota manter os hobbies",
       "subTitle": null,
       "src": "/img/hobb.jpeg",
       "price": 2500
     },
     {
+      "id": "cota-chuva-de-bencaos",
       "name": "Cota chuva de bençãos",
       "subTitle": null,
       "src": "/img/bencaos.jpeg",

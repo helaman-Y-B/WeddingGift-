@@ -169,7 +169,8 @@ nav ul li a:hover{
   background-color: var(--secondary-color);
   border: 3px solid var(--quartenary-color);
   border-radius: 5px;
-  margin: auto 0px;
+  margin: auto;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
 }

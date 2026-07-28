@@ -64,7 +64,7 @@ export default function Products() {
           product.subTitle.trim() !== "";
 
         return (
-          <div className="product" key={product.name}>
+          <div className="product" id={product.id} key={product.id}>
             <h3>{product.name}</h3>
             {hasSubtitle && <h4>{product.subTitle}</h4>}
             <img src={product.src} alt={`${product.name} image`} />

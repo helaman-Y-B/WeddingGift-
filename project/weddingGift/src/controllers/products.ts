@@ -2,6 +2,7 @@
  * This file contains the logic to fetch and build the products data for the wedding gift project.
  */
 export interface Product {
+  id: string;
   name: string;
   src: string;
   price: number;

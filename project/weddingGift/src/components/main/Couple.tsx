@@ -13,6 +13,7 @@ export default function Couple() {
              <h2>Nicole e João</h2>
              <p>Nicão</p>
           </div>
+          <p>Gostaria de participar deste momento conosco? <a href="http://">Save the Date!</a></p>
           <p>Venha conhecer a nossa <Link to="/history">História!</Link></p>
         </div>
       </div>
