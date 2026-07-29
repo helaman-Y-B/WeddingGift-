@@ -3,64 +3,64 @@
     {
       "id": "cota-nao-viver-de-miojo",
       "name": "Cota para não viver de miojo",
-      "subTitle": null,
-      "src": "/img/miojo.png",
+      "subTitle": "(Para jantares dignos)",
+      "src": "/img/miojo.webp",
       "price": 50
     },
     {
       "id": "cota-viagem-pro-templo",
       "name": "Cota viagem pro templo",
-      "subTitle": null,
-      "src": "/img/templo.jpeg",
+      "subTitle": "(Ajude na nossa jornada ao templo)",
+      "src": "/img/templo.webp",
       "price": 100
     },
     {
       "id": "cota-meias-furadas",
       "name": "Cota para o noivo não ter mais meias furadas",
-      "subTitle": null,
-      "src": "/img/meias.jpeg",
+      "subTitle": "(S.O.S meias: resgate fashion do noivo)",
+      "src": "/img/meias.webp",
       "price": 200
     },
     {
       "id": "cota-noiva-30cm",
       "name": "Cota para a Noiva crecer 30cm",
       "subTitle": "(quem sabe ainda acontece)",
-      "src": "/img/perna.jpeg",
+      "src": "/img/perna.webp",
       "price": 350
     },
     {
       "id": "cota-adeus-dor-nas-costas",
       "name": "Cota 'Adeus dor nas costas'",
       "subTitle": "(comprar uma cama boa)",
-      "src": "/img/dor.jpeg",
+      "src": "/img/dor.webp",
       "price": 400
     },
     {
       "id": "cota-terapia-de-casal",
       "name": "Cota terapia de casal",
       "subTitle": "(vai que a gente enlouquece)",
-      "src": "/img/terapia.jpeg",
+      "src": "/img/terapia.webp",
       "price": 600
     },
     {
       "id": "cota-lua-de-mel",
       "name": "Cota 'Ajude na nossa Lua de Mel'",
-      "subTitle": null,
-      "src": "/img/mel.jpeg",
+      "subTitle": "(Milhas, pôr do sol e zero preocupações!)",
+      "src": "/img/mel.webp",
       "price": 1000
     },
     {
       "id": "cota-manter-hobbies",
       "name": "Cota manter os hobbies",
-      "subTitle": null,
-      "src": "/img/hobb.jpeg",
+      "subTitle": "(Mantenha nossos hobbies acesos)",
+      "src": "/img/hobb.webp",
       "price": 2500
     },
     {
       "id": "cota-chuva-de-bencaos",
       "name": "Cota chuva de bençãos",
-      "subTitle": null,
-      "src": "/img/bencaos.jpeg",
+      "subTitle": "(Amor, sorte e boas energias)",
+      "src": "/img/bencaos.webp",
       "price": 5000
     }
   ]

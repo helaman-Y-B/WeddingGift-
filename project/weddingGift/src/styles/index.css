@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #F7F4D5;
+  --primary-color: #f7f4d5;
   --secondary-color: #839958;
-  --tertiary-color: #D3968C;
+  --tertiary-color: #d3968c;
   --quartenary-color: #105666;
   --header-font: "Playwrite ID", cursive;
   --text-font: "DM Sans", sans-serif;
@@ -113,7 +113,7 @@ nav ul li a {
     padding-right 0.3s ease;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   background-color: var(--tertiary-color);
   color: #333;
   padding-left: 8px;
@@ -166,6 +166,7 @@ nav ul li a:hover{
 
 .product {
   width: 100%;
+  height: 100%;
   background-color: var(--secondary-color);
   border: 3px solid var(--quartenary-color);
   border-radius: 5px;
@@ -173,19 +174,38 @@ nav ul li a:hover{
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-.product h3, h4 {
+.product h3,
+.product h4 {
   text-align: center;
   background-color: var(--tertiary-color);
+  margin: 0;
+  padding: 12px 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .product img {
   width: 100%;
 }
 
+.product img {
+  flex: 1;
+  width: 100%;
+  display: block;
+}
+
 .product p {
-  margin-left: 15px;
+  margin: 0;
+  padding: 15px;
+  text-align: justify;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 footer {
