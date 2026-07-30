@@ -69,34 +69,36 @@ export default function ProductDetail() {
     typeof product.subTitle === "string" && product.subTitle.trim() !== "";
 
   return (
-    <div className="product-detail">
-      <button onClick={() => navigate("/")} className="back-button">
-        ← Back to products
-      </button>
-      <div className="product-detail-content">
-        <img
-          src={product.src}
-          alt={`${product.name} image`}
-          className="product-detail-image"
-        />
-        <div className="product-detail-info">
-          <h1>{product.name}</h1>
-          {hasSubtitle && <h3>{product.subTitle}</h3>}
-          <p className="price">Preço: R${product.price.toFixed(2)}</p>
-        </div>
-        <div className="buy-options">
-            <h2>Opções de compra</h2>
-            <p>Escolha a forma de pagamento que deseja:</p>
-            <ul>
-              <li>
-                <button>Comprar com Cartão de Crédito</button>
-              </li>
-              <li>
-                <button>Comprar com PIX</button>
-              </li>
-            </ul>
+    <>
+      <div className="product-detail">
+        <button onClick={() => navigate("/")} className="back-button">
+          ← Back to products
+        </button>
+        <div className="product-detail-content">
+          <img
+            src={product.src}
+            alt={`${product.name} image`}
+            className="product-detail-image"
+          />
+          <div className="product-detail-info">
+            <h1>{product.name}</h1>
+            {hasSubtitle && <h3>{product.subTitle}</h3>}
+            <p className="price">R${product.price.toFixed(2)}</p>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="buy-options">
+        <h2>Opções de compra</h2>
+        <p>Escolha a forma de pagamento</p>
+        <ul>
+          <li>
+            <button>Cartão de Crédito</button>
+          </li>
+          <li>
+            <button>Comprar com PIX</button>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }

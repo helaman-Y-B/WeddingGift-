@@ -227,3 +227,115 @@ footer {
   text-align: center;
   background-color: var(--primary-color);
 }
+
+/* Product Detail Styles */
+.product-detail {
+  width: 90%;
+  border-radius: 15px;
+  background-color: var(--tertiary-color);
+  margin: auto;
+  margin-top: 20px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.back-button {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  margin: 15px 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-family: var(--text-font);
+  background-color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--quartenary-color);
+  color: var(--primary-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.product-detail img {
+  width: 90%;
+  margin: auto;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 5px solid var(--quartenary-color);
+  display: block;
+}
+
+.product-detail-info {
+  background-color: var(--secondary-color);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.product-detail-info h1, .product-detail-info h3 {
+  text-align:center;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-detail-info p {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  margin: auto;
+  padding: 15px;
+  text-align: justify;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.buy-options {
+  background-color: var(--quartenary-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  gap: 15px;
+  margin: 20px 0px;
+}
+
+.buy-options ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0px 0px;
+}
+
+.buy-options button {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-family: var(--text-font);
+  background-color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.buy-options button:hover {
+  background-color: var(--quartenary-color);
+  color: var(--primary-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
