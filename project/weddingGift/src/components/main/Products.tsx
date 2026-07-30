@@ -73,7 +73,11 @@ export default function Products() {
             <div className="product" id={product.id}>
               <h3>{product.name}</h3>
               {hasSubtitle && <h4>{product.subTitle}</h4>}
-              <img src={product.src} alt={`${product.name} image`} />
+              <img
+                src={product.src}
+                alt={`${product.name} image`}
+                loading="lazy"
+              />
               <p>Preço: R${product.price.toFixed(2)}</p>
             </div>
           </Link>

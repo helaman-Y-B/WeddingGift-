@@ -79,6 +79,7 @@ export default function ProductDetail() {
             src={product.src}
             alt={`${product.name} image`}
             className="product-detail-image"
+            loading="lazy"
           />
           <div className="product-detail-info">
             <h1>{product.name}</h1>
