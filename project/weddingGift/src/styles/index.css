@@ -126,6 +126,10 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
+#coupleInfo img {
+  width: 100%;
+}
+
 #brinca {
   display: flex;
 }
