@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import { getProducts, type Product } from "../../controllers/products";
+import CheckoutForm from "./CheckoutForm";
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -8,6 +11,13 @@ export default function ProductDetail() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedPayment, setSelectedPayment] = useState<"card" | null>(null);
+  const [paymentCompleted, setPaymentCompleted] = useState(false);
+
+  const stripePromise = useMemo(() => {
+    const key = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+    return key ? loadStripe(key) : null;
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -88,18 +98,36 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      <div className="buy-options">
-        <h2>Opções de compra</h2>
-        <p>Escolha a forma de pagamento</p>
-        <ul>
-          <li>
-            <button>Cartão de Crédito</button>
-          </li>
-          <li>
-            <button>Comprar com PIX</button>
-          </li>
-        </ul>
-      </div>
+      {paymentCompleted ? (
+        <div className="payment-success-message">
+          <h2>Pagamento concluído!</h2>
+          <p>Obrigado pela sua contribuição.</p>
+        </div>
+      ) : selectedPayment === "card" ? (
+        <Elements stripe={stripePromise}>
+          <CheckoutForm
+            amount={product.price}
+            productName={product.name}
+            onSuccess={() => setPaymentCompleted(true)}
+            onCancel={() => setSelectedPayment(null)}
+          />
+        </Elements>
+      ) : (
+        <div className="buy-options">
+          <h2>Opções de compra</h2>
+          <p>Escolha a forma de pagamento</p>
+          <ul>
+            <li>
+              <button onClick={() => setSelectedPayment("card")}>
+                Cartão de Crédito
+              </button>
+            </li>
+            <li>
+              <button disabled>Comprar com PIX</button>
+            </li>
+          </ul>
+        </div>
+      )}
     </>
   );
 }
