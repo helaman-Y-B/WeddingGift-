@@ -24,21 +24,17 @@
     border-radius: 10px;
     border: 5px solid var(--quartenary-color);
   }
-
-  .products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
 }
 
 @media screen and (min-width: 768px) {
+
   main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   #coupleInfo {
+    margin: 0px 40px;
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
   }
@@ -60,11 +56,23 @@
 
   .products {
     display: grid;
-    grid-template-columns: repeat(3, 0.5fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 
   .product {
     max-width: 375px;
+  }
+}
+
+/* Responsive background behavior:
+   - Use `contain` by default so the full image is visible on narrow screens
+   - Switch to `cover` on wide viewports to fill large displays without gaps
+*/
+@media screen and (min-width: 1200px) {
+  body {
+    background-position: center center;
+    background-size: auto 100vh;
+    background-attachment: fixed;
   }
 }
