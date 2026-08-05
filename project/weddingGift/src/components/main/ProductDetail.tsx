@@ -1,9 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import { getProducts, type Product } from "../../controllers/products";
-import CheckoutForm from "./CheckoutForm";
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -11,13 +8,43 @@ export default function ProductDetail() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedPayment, setSelectedPayment] = useState<"card" | null>(null);
-  const [paymentCompleted, setPaymentCompleted] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
-  const stripePromise = useMemo(() => {
-    const key = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
-    return key ? loadStripe(key) : null;
-  }, []);
+  const handleStripeCheckout = async () => {
+    if (!product) return;
+
+    setCheckoutLoading(true);
+    setCheckoutError(null);
+
+    try {
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: Math.round(product.price * 100),
+          // productId: "insert_stripe_product_id_here",
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Falha ao criar sessão de checkout.");
+      }
+
+      window.location.href = data.url;
+    } catch (err) {
+      setCheckoutError(
+        err instanceof Error
+          ? err.message
+          : "Erro ao redirecionar para o Stripe Checkout.",
+      );
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -98,36 +125,23 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      {paymentCompleted ? (
-        <div className="payment-success-message">
-          <h2>Pagamento concluído!</h2>
-          <p>Obrigado pela sua contribuição.</p>
-        </div>
-      ) : selectedPayment === "card" ? (
-        <Elements stripe={stripePromise}>
-          <CheckoutForm
-            amount={product.price}
-            productName={product.name}
-            onSuccess={() => setPaymentCompleted(true)}
-            onCancel={() => setSelectedPayment(null)}
-          />
-        </Elements>
-      ) : (
-        <div className="buy-options">
-          <h2>Opções de compra</h2>
-          <p>Escolha a forma de pagamento</p>
-          <ul>
-            <li>
-              <button onClick={() => setSelectedPayment("card")}>
-                Cartão de Crédito
-              </button>
-            </li>
-            <li>
-              <button disabled>Comprar com PIX</button>
-            </li>
-          </ul>
-        </div>
-      )}
+      <div className="buy-options">
+        <h2>Opções de compra</h2>
+        <p>Escolha a forma de pagamento</p>
+        <ul>
+          <li>
+            <button onClick={handleStripeCheckout} disabled={checkoutLoading}>
+              {checkoutLoading
+                ? "Redirecionando..."
+                : "Pagar com Stripe Checkout"}
+            </button>
+          </li>
+          <li>
+            <button disabled>Comprar com PIX</button>
+          </li>
+        </ul>
+        {checkoutError && <p className="payment-error">{checkoutError}</p>}
+      </div>
     </>
   );
 }
