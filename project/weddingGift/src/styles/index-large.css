@@ -34,7 +34,6 @@
   }
 
   #coupleInfo {
-    margin: 0px 40px;
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
   }
@@ -45,6 +44,7 @@
   }
 
   #cotasInfo {
+    margin-top: 10vw;
     grid-column: 2 / span 2;
     grid-row: 3;
   }

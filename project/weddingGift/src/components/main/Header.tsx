@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <span>WeddingGift</span>
+        <img id="logo" src="/img/assets/logo.webp" alt="Logo" />
         <button onClick={handleNav}>{nav ? "X" : "--"}</button>
       </header>
       <nav className={ nav ? "openNav" : "closeNav"}>
