@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { lazy, Suspense } from "react";
 
 // Components
@@ -13,6 +14,7 @@ const CouplesHistory = lazy(() => import("./components/history/CoupleHistory"));
 function App() {
   return (
     <>
+      <Analytics />
       <BrowserRouter>
         <Header />
         <main>
