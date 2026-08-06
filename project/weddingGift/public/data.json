@@ -1,30 +1,30 @@
 {
   "products": [
     {
-      "id": "cota-nao-viver-de-miojo",
-      "name": "Cota para não viver de miojo",
-      "subTitle": "(Para jantares dignos)",
+      "id": "cota-jantar-a-velas",
+      "name": "Cota 'Jantar a velas'",
+      "subTitle": "(Merecemos um jantar chique)",
       "src": "/img/miojo.webp",
       "price": 50
     },
     {
-      "id": "cota-viagem-pro-templo",
-      "name": "Cota viagem pro templo",
+      "id": "cota-viagem-ao-templo",
+      "name": "Cota viagem ao templo",
       "subTitle": "(Ajude na nossa jornada ao templo)",
       "src": "/img/templo.webp",
       "price": 100
     },
     {
-      "id": "cota-meias-furadas",
-      "name": "Cota para o noivo não ter mais meias furadas",
-      "subTitle": "(S.O.S meias: resgate fashion do noivo)",
+      "id": "cota-cobertor",
+      "name": "Cota cobertor para o frio",
+      "subTitle": "(Ajude a aquecer nossos pés e corações)",
       "src": "/img/meias.webp",
       "price": 200
     },
     {
-      "id": "cota-noiva-30cm",
-      "name": "Cota para a Noiva crecer 30cm",
-      "subTitle": "(quem sabe ainda acontece)",
+      "id": "cota-sofa",
+      "name": "Cota sofa: o lugar cativo das visitas",
+      "subTitle": "(No chão não da pra sentar, né?)",
       "src": "/img/perna.webp",
       "price": 350
     },
@@ -36,32 +36,32 @@
       "price": 400
     },
     {
-      "id": "cota-terapia-de-casal",
-      "name": "Cota terapia de casal",
-      "subTitle": "(vai que a gente enlouquece)",
+      "id": "cota-cozinha",
+      "name": "Cota cozinha: o coração da casa",
+      "subTitle": "(Nos ajude a ter um fogão e um extintor!)",
       "src": "/img/terapia.webp",
       "price": 600
     },
     {
-      "id": "cota-lua-de-mel",
-      "name": "Cota 'Ajude na nossa Lua de Mel'",
-      "subTitle": "(Milhas, pôr do sol e zero preocupações!)",
+      "id": "cota-flores",
+      "name": "Cota 'cheirinho de flores'",
+      "subTitle": "(Melhor a máquina do que o varal)",
       "src": "/img/mel.webp",
-      "price": 1000
+      "price": 800
     },
     {
       "id": "cota-manter-hobbies",
-      "name": "Cota manter os hobbies",
-      "subTitle": "(Mantenha nossos hobbies acesos)",
+      "name": "Cota da lua de mel",
+      "subTitle": "(Ajude a manter a nossa lua de mel)",
       "src": "/img/hobb.webp",
-      "price": 2500
+      "price": 1000
     },
     {
       "id": "cota-chuva-de-bencaos",
-      "name": "Cota chuva de bençãos",
-      "subTitle": "(Amor, sorte e boas energias)",
+      "name": "Cota 'Restedontê'",
+      "subTitle": "(Geladeira dos sonhos)",
       "src": "/img/bencaos.webp",
-      "price": 5000
+      "price": 2500
     }
   ]
 }
