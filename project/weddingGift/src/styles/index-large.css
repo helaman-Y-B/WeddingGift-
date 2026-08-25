@@ -63,6 +63,14 @@
   .product {
     max-width: 375px;
   }
+
+  .product-detail {
+    grid-column: 1 / span 4;
+  }
+
+  .buy-options {
+    grid-column: 1 / span 4;
+  }
 }
 
 /* Responsive background behavior:

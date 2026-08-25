@@ -16,8 +16,8 @@
     },
     {
       "id": "cota-cobertor",
-      "name": "Cota cobertor para o frio",
-      "subTitle": "(Ajude a aquecer nossos pés e corações)",
+      "name": "Cota cobertor para o frio e ventilador para o calor",
+      "subTitle": "(Coisinhas para nosso quarto)",
       "src": "/img/meias.webp",
       "price": 200
     },
@@ -50,14 +50,14 @@
       "price": 800
     },
     {
-      "id": "cota-manter-hobbies",
+      "id": "cota-lua-de-mel",
       "name": "Cota da lua de mel",
       "subTitle": "(Ajude a manter a nossa lua de mel)",
       "src": "/img/hobb.webp",
       "price": 1000
     },
     {
-      "id": "cota-chuva-de-bencaos",
+      "id": "cota-geladeira",
       "name": "Cota 'Restedontê'",
       "subTitle": "(Geladeira dos sonhos)",
       "src": "/img/bencaos.webp",

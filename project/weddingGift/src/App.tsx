@@ -28,9 +28,10 @@ function App() {
                     <div id="cotasInfo">
                       <h2>As cotas</h2>
                       <p>
-                        Você gostaria de ajudar este maravilhoso casal com os
-                        seus futuros planos? Abaixo temos as cotas para que você
-                        consiga ajudar e participar da história deles!
+                        Queremos convidar você a fazer parte dos próximos
+                        capítulos da nossa história. Escolha uma das cotas abaixo
+                        e contribua para que possamos realizar nossos sonhos e
+                        construir juntos um futuro ainda mais especial!
                       </p>
                     </div>
                     <Products />
