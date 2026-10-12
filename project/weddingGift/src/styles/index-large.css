@@ -1,7 +1,6 @@
 @media screen and (min-width: 520px) {
 
   #coupleInfo {
-    max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -70,17 +69,5 @@
 
   .buy-options {
     grid-column: 1 / span 4;
-  }
-}
-
-/* Responsive background behavior:
-   - Use `contain` by default so the full image is visible on narrow screens
-   - Switch to `cover` on wide viewports to fill large displays without gaps
-*/
-@media screen and (min-width: 1200px) {
-  body {
-    background-position: center center;
-    background-size: auto 100vh;
-    background-attachment: fixed;
   }
 }

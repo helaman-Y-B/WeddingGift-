@@ -4,7 +4,7 @@
       "id": "cota-jantar-a-velas",
       "name": "Cota 'Jantar a velas'",
       "subTitle": "(Merecemos um jantar chique)",
-      "src": "/img/miojo.webp",
+      "src": "/img/jantar-a-velas.webp",
       "price": 50
     },
     {
@@ -18,14 +18,14 @@
       "id": "cota-cobertor",
       "name": "Cota cobertor para o frio e ventilador para o calor",
       "subTitle": "(Coisinhas para nosso quarto)",
-      "src": "/img/meias.webp",
+      "src": "/img/cobertor-para-noiva.webp",
       "price": 200
     },
     {
       "id": "cota-sofa",
       "name": "Cota sofa: o lugar cativo das visitas",
       "subTitle": "(No chão não da pra sentar, né?)",
-      "src": "/img/perna.webp",
+      "src": "/img/sofa.webp",
       "price": 350
     },
     {
@@ -39,21 +39,21 @@
       "id": "cota-cozinha",
       "name": "Cota cozinha: o coração da casa",
       "subTitle": "(Nos ajude a ter um fogão e um extintor!)",
-      "src": "/img/terapia.webp",
+      "src": "/img/fogo-na-cozinha.webp",
       "price": 600
     },
     {
       "id": "cota-flores",
       "name": "Cota 'cheirinho de flores'",
       "subTitle": "(Melhor a máquina do que o varal)",
-      "src": "/img/mel.webp",
+      "src": "/img/cheirinho-de-flores.webp",
       "price": 800
     },
     {
       "id": "cota-lua-de-mel",
       "name": "Cota da lua de mel",
       "subTitle": "(Ajude a manter a nossa lua de mel)",
-      "src": "/img/hobb.webp",
+      "src": "/img/lua-de-mel.webp",
       "price": 1000
     },
     {
