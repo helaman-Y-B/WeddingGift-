@@ -52,6 +52,10 @@ header {
 }
 
 #logo {
+  background-color: var(--primary-color);
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid var(--quartenary-color);
   width: 100px;
   height: auto;
 }
@@ -88,6 +92,9 @@ header button:hover {
 .openNav {
   background-color: var(--quartenary-color);
   max-height: 300px;
+  border-radius: 10px;
+  border: 2px solid var(--quartenary-color);
+  margin: 15px;
   opacity: 1;
   overflow: hidden;
   pointer-events: auto;

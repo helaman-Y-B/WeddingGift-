@@ -28,9 +28,6 @@ export default function Couple() {
             Gostaria de participar deste momento conosco?{" "}
             <a href="http://">Save the Date!</a>
           </p>
-          <p>
-            Venha conhecer a nossa <Link to="/history">História!</Link>
-          </p>
         </div>
       </div>
     </>

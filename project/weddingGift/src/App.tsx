@@ -9,7 +9,6 @@ import Footer from "./components/main/Footer";
 const Couple = lazy(() => import("./components/main/Couple"));
 const Products = lazy(() => import("./components/main/Products"));
 const ProductDetail = lazy(() => import("./components/main/ProductDetail"));
-const CouplesHistory = lazy(() => import("./components/history/CoupleHistory"));
 
 function App() {
   return (
@@ -39,7 +38,6 @@ function App() {
                 }
               />
               <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/history" element={<CouplesHistory />} />
             </Routes>
           </Suspense>
         </main>
