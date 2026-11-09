@@ -22,10 +22,12 @@ export default function Couple() {
             <h2>Nicole e João</h2>
             <p>Nicão</p>
           </div>
-          <p>
-            Gostaria de participar deste momento conosco?{" "}
-            <a href="http://">Save the Date!</a>
-          </p>
+          <h3>Informações do casamento:</h3>
+          <ul>
+            <li>Data: 19/02/2027</li>
+            <li>Horário: Chegada 17:30, começo da cerimônia 18h.</li>
+            <li>Local: Espaço Floratta - Av. José Bonifácio, número 2029 - Cambé</li>
+          </ul>
         </div>
       </div>
     </>

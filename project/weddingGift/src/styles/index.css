@@ -178,6 +178,15 @@ nav ul li a:hover {
   padding: 0px;
 }
 
+#infos h3 {
+  padding-left: 0px;
+}
+
+#infos ul {
+  font-family: var(--text-font);
+  padding-left: 20px;
+}
+
 .products {
   padding: 10vw;
   display: flex;
