@@ -10,7 +10,7 @@ export default function Footer() {
       <footer>
         <p>&copy; - WeddingGift - Helamã Y. Barbour - PR/BR</p>
         <p>
-          Last Modified: <span id="lastModified">{currentDate}</span>
+          Última atualização: <span id="lastModified">{currentDate}</span>
         </p>
       </footer>
     </>

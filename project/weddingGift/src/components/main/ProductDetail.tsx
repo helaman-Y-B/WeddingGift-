@@ -58,13 +58,13 @@ export default function ProductDetail() {
           if (foundProduct) {
             setProduct(foundProduct);
           } else {
-            setError("Product not found");
+            setError("Produto não encontrado.");
           }
         }
       } catch (err) {
         console.error("Failed to load product", err);
         if (isMounted) {
-          setError("Failed to load product");
+          setError("Não foi possível carregar o produto.");
         }
       } finally {
         if (isMounted) {
@@ -84,9 +84,9 @@ export default function ProductDetail() {
     return (
       <div className="product-detail">
         <button onClick={() => navigate("/")} className="back-button">
-          ← Back to products
+          ← Voltar para as cotas
         </button>
-        <p>Loading product...</p>
+        <p>Carregando produto...</p>
       </div>
     );
   }
@@ -95,9 +95,9 @@ export default function ProductDetail() {
     return (
       <div className="product-detail">
         <button onClick={() => navigate("/")} className="back-button">
-          ← Back to products
+          ← Voltar para as cotas
         </button>
-        <p>{error || "Product not found"}</p>
+        <p>{error || "Produto não encontrado."}</p>
       </div>
     );
   }
@@ -109,12 +109,12 @@ export default function ProductDetail() {
     <>
       <div className="product-detail">
         <button onClick={() => navigate("/")} className="back-button">
-          ← Back to products
+          ← Voltar para as cotas
         </button>
         <div className="product-detail-content">
           <img
             src={product.src}
-            alt={`${product.name} image`}
+            alt={product.name}
             className="product-detail-image"
             loading="lazy"
           />

@@ -42,7 +42,7 @@ export default function Products() {
   if (loading) {
     return (
       <div className="products">
-        <p>Loading products...</p>
+        <p>Carregando cotas...</p>
       </div>
     );
   }
@@ -51,7 +51,7 @@ export default function Products() {
   if (products.length === 0) {
     return (
       <div className="products">
-        <p>No products found.</p>
+        <p>Nenhuma cota encontrada.</p>
       </div>
     );
   }
@@ -75,7 +75,7 @@ export default function Products() {
               {hasSubtitle && <h4>{product.subTitle}</h4>}
               <img
                 src={product.src}
-                alt={`${product.name} image`}
+                alt={product.name}
                 loading="lazy"
               />
               <p>Preço: R${product.price.toFixed(2)}</p>

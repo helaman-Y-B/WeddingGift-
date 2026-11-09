@@ -26,12 +26,23 @@ function App() {
                     <Couple />
                     <div id="cotasInfo">
                       <h2>As cotas</h2>
+                      <p>Estamos animados para ver todos vocês!</p>
                       <p>
-                        Queremos convidar você a fazer parte dos próximos
-                        capítulos da nossa história. Escolha uma das cotas abaixo
-                        e contribua para que possamos realizar nossos sonhos e
-                        construir juntos um futuro ainda mais especial!
+                        Como todos sabem, começar um casamento não é muito barato,
+                        então fizemos essas cotas para aqueles que gostariam de nos
+                        ajudar nessa nova jornada da nossa vida.
                       </p>
+                      <p>
+                        Escolha uma das cotas abaixo e contribua para que possamos
+                        realizar nossos sonhos e construir juntos um futuro ainda
+                        mais especial!
+                      </p>
+                      <p>
+                        Toda ajuda é bem-vinda. Quem quiser contribuir com um valor
+                        diferente dos disponíveis nas cotas pode fazer um Pix usando
+                        a chave abaixo.
+                      </p>
+                      <p>Chave Pix: nickyoletta21@gmail.com</p>
                     </div>
                     <Products />
                   </>

@@ -15,7 +15,7 @@ export default function Couple() {
             srcSet="/img/couple-large-s.webp"
             media="(min-width: 520px)"
           />
-          <img src="/img/couple-small.webp" alt="Couples image" />
+          <img src="/img/couple-small.webp" alt="Foto do casal" />
         </picture>
         <div id="infos">
           <div id="brinca">

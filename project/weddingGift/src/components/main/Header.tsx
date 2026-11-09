@@ -18,7 +18,7 @@ export default function Header() {
       <nav className={ nav ? "openNav" : "closeNav"}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Início</Link>
           </li>
         </ul>
       </nav>
