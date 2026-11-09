@@ -9,3 +9,7 @@
 # The plan:
 
     The page will open in a home page where a wedding closed letter will be displayed. After clicking it the user will be sent to the part where they will be able to select the products.
+
+# Current webpage:
+
+    https://wedding-gift-gamma.vercel.app/
