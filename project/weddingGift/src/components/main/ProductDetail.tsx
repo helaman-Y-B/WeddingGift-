@@ -23,10 +23,8 @@ export default function ProductDetail() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          amount: Math.round(product.price * 100),
-          // productId: "insert_stripe_product_id_here",
-        }),
+        // The API looks up price and recipient account on the server.
+        body: JSON.stringify({ productId: product.id }),
       });
 
       const data = await response.json();

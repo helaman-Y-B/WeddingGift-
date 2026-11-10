@@ -9,6 +9,7 @@ import Footer from "./components/main/Footer";
 const Couple = lazy(() => import("./components/main/Couple"));
 const Products = lazy(() => import("./components/main/Products"));
 const ProductDetail = lazy(() => import("./components/main/ProductDetail"));
+const PaymentResult = lazy(() => import("./components/main/PaymentResult"));
 
 function App() {
   return (
@@ -49,6 +50,14 @@ function App() {
                 }
               />
               <Route path="/product/:id" element={<ProductDetail />} />
+              <Route
+                path="/payment/success"
+                element={<PaymentResult success />}
+              />
+              <Route
+                path="/payment/canceled"
+                element={<PaymentResult success={false} />}
+              />
             </Routes>
           </Suspense>
         </main>

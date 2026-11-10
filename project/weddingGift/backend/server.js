@@ -1,52 +1,127 @@
 require("dotenv").config();
+const { readFileSync } = require("node:fs");
+const path = require("node:path");
 const express = require("express");
 const cors = require("cors");
 const Stripe = require("stripe");
 
-const app = express();
+// Keep product prices in the server-owned catalog so checkout requests cannot
+// change the amount a customer is charged.
+const productsData = JSON.parse(
+  readFileSync(path.join(__dirname, "../public/data.json"), "utf8"),
+);
+const products = productsData.products;
 
-app.use(cors());
-app.use(express.json());
+// Build the API separately from starting the listener so tests can supply a
+// fake Stripe client without needing real Stripe credentials.
+function createApp({ stripe, connectedAccountId, frontendUrl }) {
+  const app = express();
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+  app.use(cors());
+  app.use(express.json());
 
-app.post("/create-checkout-session", async (req, res) => {
-  try {
-    const { amount /*, productId */ } = req.body;
+  app.post("/api/create-checkout-session", async (req, res) => {
+    // The browser sends only an ID; the server decides the price and recipient.
+    const { productId } = req.body ?? {};
 
-    if (!amount || typeof amount !== "number") {
-      return res.status(400).send({ error: "Invalid amount" });
+    if (typeof productId !== "string" || productId.trim() === "") {
+      return res.status(400).json({ error: "A valid productId is required." });
     }
 
-    const origin = req.headers.origin || "http://localhost:5173";
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "brl",
-            product_data: {
-              name: "Contribuição para presente de casamento",
-              // You can also pass the Stripe product ID here once it is available:
-              // product: productId,
+    // Resolve price and display name from the server catalog, not request data.
+    const product = products.find((item) => item.id === productId);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found." });
+    }
+
+    const amount = Math.round(product.price * 100);
+    if (!Number.isSafeInteger(amount) || amount <= 0) {
+      console.error(`Invalid configured price for product "${product.id}".`);
+      return res.status(500).json({ error: "Product price is not configured." });
+    }
+
+    try {
+      // These paths return the customer to the frontend after Checkout.
+      const successUrl = new URL("/payment/success", frontendUrl).toString();
+      const cancelUrl = new URL("/payment/canceled", frontendUrl).toString();
+
+      // Stripe hosts the payment form, then routes the payment to the
+      // configured connected account through transfer_data.destination.
+      const session = await stripe.checkout.sessions.create({
+        mode: "payment",
+        payment_method_types: ["card"],
+        line_items: [
+          {
+            price_data: {
+              currency: "brl",
+              product_data: { name: product.name },
+              unit_amount: amount,
             },
-            unit_amount: amount,
+            quantity: 1,
           },
-          quantity: 1,
+        ],
+        // Destination charges route the payment to this server-configured
+        // connected account after the customer completes Checkout.
+        payment_intent_data: {
+          transfer_data: { destination: connectedAccountId },
+          metadata: { product_id: product.id },
         },
-      ],
-      success_url: `${origin}/?payment=success`,
-      cancel_url: `${origin}/?payment=canceled`,
-    });
+        success_url: successUrl,
+        cancel_url: cancelUrl,
+      });
 
-    res.send({ url: session.url });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ error: error.message });
+      if (!session.url) {
+        throw new Error("Stripe did not return a Checkout URL.");
+      }
+
+      return res.status(201).json({ url: session.url });
+    } catch (error) {
+      console.error("Failed to create Stripe Checkout session:", error);
+      return res.status(500).json({ error: "Could not create checkout session." });
+    }
+  });
+
+  return app;
+}
+
+function startServer() {
+  // Credentials and recipient configuration stay on the backend, never in the
+  // browser bundle. Fail at startup if required settings are missing.
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  const connectedAccountId = process.env.STRIPE_CONNECTED_ACCOUNT_ID;
+  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+
+  if (!stripeSecretKey) {
+    throw new Error("Set STRIPE_SECRET_KEY in backend/.env before starting the API.");
   }
-});
+  if (!connectedAccountId || !connectedAccountId.startsWith("acct_")) {
+    throw new Error(
+      "Set STRIPE_CONNECTED_ACCOUNT_ID to the recipient's connected acct_ ID.",
+    );
+  }
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+  const frontend = new URL(frontendUrl);
+  if (frontend.protocol !== "http:" && frontend.protocol !== "https:") {
+    throw new Error("FRONTEND_URL must use http or https.");
+  }
+
+  const stripe = Stripe(stripeSecretKey);
+  const app = createApp({
+    stripe,
+    connectedAccountId,
+    frontendUrl: frontend.origin,
+  });
+  const port = Number(process.env.PORT) || 3000;
+
+  return app.listen(port, () => {
+    console.log(`Stripe checkout API listening on port ${port}`);
+  });
+}
+
+// Only start listening when executed directly; importing this file in tests
+// exposes the app factory without opening a permanent server.
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = { createApp, startServer };

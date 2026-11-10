@@ -372,3 +372,58 @@ footer {
     background-color 0.3s ease,
     color 0.3s ease;
 }
+
+.payment-result {
+  grid-column: 1 / -1;
+  width: min(90% - 30px, 600px);
+  margin: 40px auto;
+  padding: 30px;
+  border: 3px solid var(--quartenary-color);
+  border-radius: 15px;
+  background-color: var(--primary-color);
+  color: #242424;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.payment-result-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-family: var(--text-font);
+  font-size: 2.5rem;
+}
+
+.payment-result--canceled .payment-result-icon {
+  background-color: var(--tertiary-color);
+}
+
+.payment-result h1 {
+  padding: 10px 0;
+}
+
+.payment-result p {
+  line-height: 1.6;
+}
+
+.payment-result-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border: 2px solid var(--quartenary-color);
+  border-radius: 5px;
+  background-color: var(--quartenary-color);
+  color: var(--primary-color);
+  font-family: var(--text-font);
+  text-decoration: none;
+}
+
+.payment-result-link:hover {
+  background-color: transparent;
+  color: var(--quartenary-color);
+}

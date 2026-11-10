@@ -73,3 +73,26 @@ export default defineConfig([
 ])
 
 ```
+
+## Stripe Connect checkout (test mode)
+
+The backend creates a Stripe Checkout Session from the selected product ID. It
+loads the price and product name from `public/data.json` and sends the payment
+to the connected account configured on the server using a destination charge.
+The browser cannot choose the amount or recipient. This setup uses one
+connected account for all gift contributions.
+
+1. In Stripe test mode, create/onboard the recipient as a connected account and
+   make sure it can receive payments.
+2. Copy `backend/.env.example` to `backend/.env` and set `STRIPE_SECRET_KEY` to
+   your test secret key and `STRIPE_CONNECTED_ACCOUNT_ID` to the recipient's
+   `acct_...` ID. Set `FRONTEND_URL` if the frontend is not running on
+   `http://localhost:5173`.
+3. Start the API with `cd backend && npm start`, then start the frontend from
+   the project directory with `npm run dev`.
+4. Open a product and choose Stripe Checkout. Use Stripe's test card
+   `4242 4242 4242 4242` with a future expiry and any CVC to complete a test
+   payment. Verify the payment and transfer in the Stripe test dashboard.
+
+Keep the Stripe secret key and connected account ID in the backend environment;
+never add them to frontend code. Run backend checks with `cd backend && npm test`.
