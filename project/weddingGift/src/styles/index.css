@@ -225,6 +225,7 @@ nav ul li a:hover {
 .product h3,
 .product h4 {
   text-align: center;
+  font-size: 1.2rem;
   margin: 0;
   padding: 12px 15px;
   width: 100%;
