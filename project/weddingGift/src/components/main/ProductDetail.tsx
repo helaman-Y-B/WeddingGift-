@@ -8,43 +8,6 @@ export default function ProductDetail() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [checkoutError, setCheckoutError] = useState<string | null>(null);
-
-  const handleStripeCheckout = async () => {
-    if (!product) return;
-
-    setCheckoutLoading(true);
-    setCheckoutError(null);
-
-    try {
-      const response = await fetch("/api/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: Math.round(product.price * 100),
-          // productId: "insert_stripe_product_id_here",
-        }),
-      });
-
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || "Falha ao criar sessão de checkout.");
-      }
-
-      window.location.href = data.url;
-    } catch (err) {
-      setCheckoutError(
-        err instanceof Error
-          ? err.message
-          : "Erro ao redirecionar para o Stripe Checkout.",
-      );
-    } finally {
-      setCheckoutLoading(false);
-    }
-  };
 
   useEffect(() => {
     let isMounted = true;
@@ -126,21 +89,10 @@ export default function ProductDetail() {
         </div>
       </div>
       <div className="buy-options">
-        <h2>Opções de compra</h2>
-        <p>Escolha a forma de pagamento</p>
-        <ul>
-          <li>
-            <button onClick={handleStripeCheckout} disabled={checkoutLoading}>
-              {checkoutLoading
-                ? "Redirecionando..."
-                : "Pagar com Stripe Checkout"}
-            </button>
-          </li>
-          <li>
-            <button disabled>Comprar com PIX</button>
-          </li>
-        </ul>
-        {checkoutError && <p className="payment-error">{checkoutError}</p>}
+        <h2>Pagar com PIX</h2>
+        <a className="pix-payment-link" href={product.pixUrl}>
+          Continuar para o pagamento
+        </a>
       </div>
     </>
   );

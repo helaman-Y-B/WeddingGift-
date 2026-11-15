@@ -351,21 +351,24 @@ footer {
   padding: 0px 0px;
 }
 
-.buy-options button {
+.pix-payment-link {
+  display: inline-block;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   padding: 10px 15px;
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   font-family: var(--text-font);
   background-color: var(--primary-color);
+  color: var(--quartenary-color);
   font-size: 1.2rem;
   cursor: pointer;
+  text-decoration: none;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-.buy-options button:hover {
+.pix-payment-link:hover {
   background-color: var(--quartenary-color);
   color: var(--primary-color);
   transition:
